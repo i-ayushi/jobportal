@@ -1,0 +1,121 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Home</title>
+    
+    <script type="module" src="showjobs.js"></script>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    color: #333;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.job-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.job-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+.job-card p {
+    margin-bottom: 10px;
+}
+
+.job-card .job-info {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.job-card .job-salary {
+    color: #27ae60;
+    font-weight: bold;
+}
+.apply-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+    background-color: #218838;
+}
+
+</style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Available Jobs</h1>
+        <div id="job-listings" class="job-listings">
+            <!-- Job postings will be displayed here -->
+        </div>
+    </div>
+    <!-- Application Modal -->
+<div id="applicationModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2>Apply for Job</h2>
+        <form id="application-form">
+            <input type="text" id="applicantName" placeholder="Your Name" required>
+            <input type="email" id="applicantEmail" placeholder="Your Email" required>
+            <textarea id="applicantCoverLetter" placeholder="Cover Letter" required></textarea>
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+</body>
+</html>

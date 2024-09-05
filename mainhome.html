@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>job portal</title>
+    <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="showjob.css">
+ <script src="showjobs.js"></script>
+ <script src="search.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+<header>
+<nav class="nav">
+<div class="list">
+    <a class="home" href="mainhome.html" style="text-decoration: none;">Home
+        
+    </a>
+    <a class="employer">  Employer
+        <!-- <select name="employer">
+            <option>employer</option>
+            <option>post job</option>
+            <option>resume</option>
+            <option>info</option></select> -->
+    </a>
+    <a class="candidate">Candidate </a>
+    <a class="page">Pages </a>
+    <a class="contact">Contact </a>
+
+</div>
+<div class="button">
+<button style="background-color: rgb(43, 169, 215);"><a href="login_signin.html" style="text-decoration: none; padding-right: 34px;"> Employer login</a></button>
+    <button>
+        <a href="login_signin.html" style="text-decoration: none;">Candidate register </a>
+        </button>
+</div>
+</nav>
+
+<div class="searchbox">
+<div class="search-container">
+    <input type="text" placeholder="Search by job/city">
+    <input type="text" placeholder="Anywhere in India">
+    <button style="font-weight: bold;">Search jobs</button>
+</div>
+</div>
+
+<div class="tagline">
+    <a href="">INDIA'S  JOB PLATFORM</a>
+    <h1>Finding Job Is Easy</h1>
+    </div>
+</header>
+
+<div id="recentjob">
+    <button id="button1">RECENT JOB</button>
+        <button id="button2">LATEST</button>
+    </div>
+<!-- 
+<div class="jobtype">
+
+
+    <div class="type1">
+        <div class="box">Full Time</div>
+
+        <i class="fa-solid fa-heart"  id="heart"></i>
+        <div class="img">
+            <div class="image"></div>
+            <a href="#" >Product Redesign</a>
+        <p>2708 Scenic Way, IL 62373</p>
+        </div>
+    <button class="apply">APPLY NOW</button>
+    </div>
+    <div class="type1">
+        <div class="box">Full Time</div>
+
+        <i class="fa-solid fa-heart"  id="heart"></i>
+        <div class="img">
+            <div class="image"></div>
+            <a href="#" >Product Redesign</a>
+        <p>2708 Scenic Way, IL 62373</p>
+        </div>
+    <button class="apply">APPLY NOW</button>
+    </div>
+    <div class="type1">
+        <div class="box">Full Time</div>
+
+        <i class="fa-solid fa-heart"  id="heart"></i>
+        <div class="img">
+            <div class="image"></div>
+            <a href="#" >Product Redesign</a>
+        <p>2708 Scenic Way, IL 62373</p>
+        </div>
+    <button class="apply">APPLY NOW</button>
+    </div>
+    <div class="type1">
+        <div class="box">Full Time</div>
+
+        <i class="fa-solid fa-heart"  id="heart"></i>
+        <div class="img">
+            <div class="image"></div>
+            <a href="#" >Product Redesign</a>
+        <p>2708 Scenic Way, IL 62373</p>
+        </div>
+    <button class="apply">APPLY NOW</button>
+    </div>
+
+</div> -->
+<div class="jobtype1" id="jobtype1">
+  
+</div>
+<div class="browse"><button class="browse"><a href="showjob.html" style="text-decoration: none;">Browse All Jobs</a></button></div>
+<section>
+    <div class="categories">
+        <h2>Job Categories</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repudiandae labore quasi, veritatis est cumque iure officiis sint beatae tempora nesciunt nisi</p>
+    </div>
+    <div class="job-by-name">
+        <div class="jobcateg">
+            <div class="jobcategname">
+        <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+           <div class="job"> <h4>Accounting & Counsulting</h4>
+            <p>10 jobs</p>
+        </div>
+    </div>
+    </div>
+    <div class="jobcateg">
+        <div class="jobcategname">
+    <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+       <div class="job"> <h4>Accounting & Counsulting</h4>
+        <p>10 jobs</p>
+    </div>
+</div>
+</div>
+<div class="jobcateg">
+    <div class="jobcategname">
+<i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+   <div class="job"> <h4>Accounting & Counsulting</h4>
+    <p>10 jobs</p>
+</div>
+</div>
+</div>
+<div class="jobcateg">
+    <div class="jobcategname">
+<i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+   <div class="job"> <h4>Accounting & Counsulting</h4>
+    <p>10 jobs</p>
+</div>
+</div>
+</div>
+
+</div>
+<div class="job-by-name2">
+    <div class="jobcateg">
+        <div class="jobcategname">
+    <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+       <div class="job"> <h4>Accounting & Counsulting</h4>
+        <p>10 jobs</p>
+    </div>
+</div>
+</div>
+<div class="jobcateg">
+    <div class="jobcategname">
+<i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+   <div class="job"> <h4>Accounting & Counsulting</h4>
+    <p>10 jobs</p>
+</div>
+</div>
+</div>
+<div class="jobcateg">
+    <div class="jobcategname">
+<i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+   <div class="job"> <h4>Accounting & Counsulting</h4>
+    <p>10 jobs</p>
+</div>
+</div>
+</div>
+<div class="jobcateg">
+    <div class="jobcategname">
+<i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+   <div class="job"> <h4>Accounting & Counsulting</h4>
+    <p>10 jobs</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="view-button"><button class="view-button">View All Categories</button></div>
+<article >
+    
+    <div class="postjob"></div>
+    <div class="posting">
+        <button class="hostjob">APNA FOR EMPLOYERS</button>
+        <h1>Want to hire?
+          </h1>
+          <p>  Find the best candidate from 5 crore+ active job seekers!</p>
+        <BUtton class="host"> 
+            <a href="jobhost.html" style="text-decoration: none;"> POST JOB </a>
+            </BUtton>
+       
+    </div>
+    
+</article
+
+
+
+<div class="instruction">
+    <h1 style="font-size: 34PX; padding-left: 40%; background-color: rgb(244, 241, 238);">How Its Work</h1>
+    <div class="instruct"><div class="create"><div class="account">
+        <h1>Create Account</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p>
+    </div>
+    <i class="fa-solid fa-user" style=" font-size: 3rem; margin-left: 13px;"></i>
+</div>
+
+<div class="create"><div class="search">
+<h1>Search</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p> 
+</div>
+    
+<i class="fa-solid fa-magnifying-glass" style="font-size: 3rem;margin-left: 13px;"></i>
+</div>
+       <div class="create">
+        <div class="submit">
+        <h1>Submit</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p> 
+        </div>
+        
+        <i class="fa-solid fa-truck" style="font-size: 3rem;margin-left: 13px;"></i>
+    </div>
+</div>
+</div>
+
+<footer><div class="footer">
+    <div class="copyright"> 
+        <div class="footer-logo">
+            <div class="namelogo"><img src="logo.png" alt=""></div>
+            <div class="vl1"></div>
+        <div class="sociallink">
+            <h1>Follow Us On social Media</h1>
+            <div class="social-logo">
+                <i class="fa-brands fa-instagram" style="font-size: 2rem ; color:aliceblue;"></i>
+                <i class="fa-brands fa-linkedin" style="font-size: 2rem ; color:aliceblue;"></i>
+                <i class="fa-brands fa-twitter" style="font-size: 2rem ; color:aliceblue;"></i>
+                <i class="fa-brands fa-github" style="font-size: 2rem ; color:aliceblue;"></i>
+                <i class="fa-brands fa-youtube" style="font-size: 2rem ; color:aliceblue;"></i>
+
+
+            </div>
+        </div>
+    </div>
+    <hr>
+<div class="terms">
+<div class="copyrightlogo">
+<div style="display: flex;"> <i class="fa-regular fa-copyright">  </i>
+            <div>2024 ayushi</div><div class="vl"></div>
+
+<div>All rights reserved</div></div>
+    <div>privacy policy</div>
+    <div>Terms & Conditions</div>  
+
+        </div>
+    </div>
+</div>
+<div class="links">
+    <div class="link1">
+        <h1>Apply on the go</h1>
+        <p>Get real time job updates on our App</p>
+        <img src="img.jpg" alt="" class="login-img">
+    </div>
+    <div class="scanner"><img src="logo.png" alt=""></div>
+</div>
+</div>
+
+</footer>
+
+<script >  
+    
+    function toggleButtonColors(clickedButton, otherButton) {
+            if (clickedButton.style.backgroundColor === 'blue') {
+                clickedButton.style.backgroundColor = 'gray';
+            } else {
+                clickedButton.style.backgroundColor = 'blue';
+                otherButton.style.backgroundColor = 'gray';
+            }
+        }
+
+        document.getElementById('button1').addEventListener('click', function() {
+            toggleButtonColors(document.getElementById('button1'), document.getElementById('button2'));
+        });
+
+        document.getElementById('button2').addEventListener('click', function() {
+            toggleButtonColors(document.getElementById('button2'), document.getElementById('button1'));
+        });
+
+</script>
+<script src="mainhome.js" type="module"></script>
+</body>
+</html>

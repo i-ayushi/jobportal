@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Job Post Form</title>
+    <link rel="stylesheet" href="showjob.css">
+  
+    <script type="module" src="showjob.js"></script>
+    
+    <link rel="stylesheet" href="jobhost.css">
+    <script type="module" src="jobhost.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Post a Job</h1>
+        <form id="job-form">
+            <div class="input-wrapper">
+                <input type="text" id="jobTitle" required>
+                <label for="jobTitle">Job Title</label>
+            </div>
+            <div class="input-wrapper">
+                <textarea id="jobDescription" required></textarea>
+                <label for="jobDescription">Job Description</label>
+            </div>
+            <div class="input-wrapper">
+                <textarea id="jobRequirements" required></textarea>
+                <label for="jobRequirements">Job Requirements</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="jobLocation" required>
+                <label for="jobLocation">Job Location</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="jobSalary" required>
+                <label for="jobSalary">Job Salary</label>
+            </div>
+            <button type="submit" class="submit-btn">Post Job</a></button>
+        </form>
+        <div id="successMessage" class="success-message" style="display: none;">Job posted successfully!</div>
+        <!-- <div class="container">
+            <h1>Available Jobs</h1>
+            <div id="job-listings" class="job-listings">
+                Job postings will be displayed here
+            </div>
+        </div> -->
+        
+</body>
+</html>
