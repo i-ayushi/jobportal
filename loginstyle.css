@@ -79,6 +79,62 @@ input:focus~label,input:not(:placeholder-shown)~label{
     color:blue;
     text-decoration:underline;
 }
+#roles {
+    font-size: 1rem;
+    color: #757575;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+/* margin-left: -15px; */
+    display: block;
+    /* padding-left: 1rem; */
+}
+
+#emp, #job {
+    font-size: 1rem;
+    margin-right: 90px;
+    margin-left: 30px;
+    position: relative;
+    padding-left: 90px;
+    cursor: pointer;
+    user-select: none;
+    color: #757575;
+   
+}
+
+#emp::before, #job::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 40%;
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+    border: 2px solid #757575;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+input[type="radio"]:checked + #emp::before,
+input[type="radio"]:checked + #job::before {
+    background-color: hsl(327, 90%, 28%);
+    border-color: hsl(327, 90%, 28%);
+}
+
+/* #emp::before:after, #job::before:after {
+    content: "";
+    position: absolute;
+    display: none;
+} */
+
+/* input[type="radio"]:checked + #emp::before:after,
+input[type="radio"]:checked + #job::before:after {
+    display: inline-block;
+}  */
+input[type="radio"]{
+display: none;
+}
+
+
 button{
     font-size:1.1rem;
     padding:8px 0;

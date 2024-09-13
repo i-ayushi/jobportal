@@ -3,90 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register & Login</title>
+    <title>Employer Register & Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="loginstyle.css">
     <script type="module" src="firebaseauth.js"></script>
 </head>
 <body>
     <div class="container" id="signup" style="display:none;">
-      <h1 class="form-title">Register</h1>
+      <h1 class="form-title">Employer Register</h1>
       <form method="post" action="">
         <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
         <div class="input-group">
            <i class="fas fa-user"></i>
-           <input type="text"  id="fName" placeholder="First Name" required>
-           <label for="fname">First Name</label>
+           <input type="text"  id="eFName" placeholder="First Name" required>
+           <label for="eFName">First Name</label>
         </div>
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input type="text"  id="lName" placeholder="Last Name" required>
-            <label for="lName">Last Name</label>
+            <input type="text"  id="eLName" placeholder="Last Name" required>
+            <label for="eLName">Last Name</label>
         </div>
         <div class="input-group">
             <i class="fas fa-envelope"></i>
-            <input type="email"  id="rEmail" placeholder="Email" required>
-            <label for="rEmail">Email</label>
+            <input type="email"  id="eEmail" placeholder="Email" required>
+            <label for="eEmail">Email</label>
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" id="rPassword"  placeholder="Password" required>
-            <label for="rPassword">Password</label>
+            <input type="password" id="ePassword"  placeholder="Password" required>
+            <label for="ePassword">Password</label>
         </div>
-        <!-- Add this to your signup form -->
-<label id="roles" for="role">Sign up as:</label>
-<input type="radio" id="employer" name="role" value="employer" required>
-<label id="emp" for="employer">Employer</label>
-<input type="radio" id="job-seeker" name="role" value="job-seeker" required>
-<label id="job" for="job-seeker">Job Seeker</label>
-
-       <button class="btn" id="submitSignUp" >Sign Up</button>
+       <button class="btn" id="submitEmployerSignUp">Sign Up</button>
       </form>
-      <p class="or">
-        ----------or--------
-      </p>
+      <p class="or">----------or--------</p>
       <div class="icons">
         <i class="fab fa-google"></i>
         <i class="fab fa-facebook"></i>
       </div>
       <div class="links">
-        <p>Already Have Account ?</p>
+        <p>Already Have an Account?</p>
         <button id="signInButton">Sign In</button>
       </div>
     </div>
 
-  <div class="container" id="signIn">
-        <h1 class="form-title">Sign In</h1>
+    <div class="container" id="signIn">
+        <h1 class="form-title">Employer Sign In</h1>
         <form method="post" action="">
           <div id="signInMessage" class="messageDiv" style="display:none;"></div>
 
           <div class="input-group">
               <i class="fas fa-envelope"></i>
-              <input type="email"  id="email" placeholder="Email" required>
-              <label for="email">Email</label>
+              <input type="email" id="eSignInEmail" placeholder="Email" required>
+              <label for="eSignInEmail">Email</label>
           </div>
           <div class="input-group">
               <i class="fas fa-lock"></i>
-            <input type="password" id="password"  placeholder="Password" required>
-              <label for="password">Password</label>
+            <input type="password" id="eSignInPassword" placeholder="Password" required>
+              <label for="eSignInPassword">Password</label>
           </div>
           <p class="recover">
             <a href="#">Recover Password</a>
           </p>
-         <button  class="btn"  id="submitSignIn">Sign In</button>
+         <button class="btn" id="submitEmployerSignIn">Sign In</button>
         </form>
-        <p class="or">
-          ----------or--------
-        </p>
+        <p class="or">----------or--------</p>
         <div class="icons">
           <i class="fab fa-google"></i>
           <i class="fab fa-facebook"></i>
         </div>
         <div class="links">
-          <p>Don't have account yet?</p>
+          <p>Don't have an account yet?</p>
           <button id="signUpButton">Sign Up</button>
         </div>
-      </div>
-      <script src="script.js"></script>
+    </div>
+
+    <!-- <script src="employer.js"></script> -->
+    <script src="script.js"></script>
+   
 </body>
 </html>

@@ -32,6 +32,7 @@
     const password=document.getElementById('rPassword').value;
     const firstName=document.getElementById('fName').value;
     const lastName=document.getElementById('lName').value;
+    const role = document.querySelector('input[name="role"]:checked').value; // Radio button for role
 
     const auth=getAuth();
     const db=getFirestore();
@@ -42,13 +43,14 @@
         const userData={
             email: email,
             firstName: firstName,
-            lastName:lastName
+            lastName:lastName,
+            role: role 
         };
         showMessage('Account Created Successfully', 'signUpMessage');
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='login_signin.html';
+            window.location.href='mainhome.html';
         })
         .catch((error)=>{
             console.error("error writing document", error);

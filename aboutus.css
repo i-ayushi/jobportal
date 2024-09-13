@@ -1,0 +1,254 @@
+/* General body and text styles */
+body {
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header and Navigation Bar */
+nav.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 50px;
+    border-bottom: 1px solid lightgray;
+    font-size: 18px;
+}
+
+.nav .list a {
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav .list a:hover {
+    color: rgb(43, 169, 215);
+}
+
+.nav .button button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav .button button:first-child {
+    background-color: rgb(43, 169, 215);
+    color: white;
+    margin-right: 10px;
+}
+
+/* .nav .button button:last-child {
+    background-color: #1f8ecd;
+    color: white;
+} */
+
+/* About Section */
+.about-section {
+    padding: 50px 0;
+    background-color: rgb(244, 241, 238);
+    text-align: center;
+}
+
+.about-section h1, .about-section h2 {
+    color: rgb(43, 169, 215);
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.about-section ul li {
+    padding: 10px;
+}
+
+/* Post Job Section */
+article {
+    text-align: center;
+    padding: 50px 0;
+    background-color: rgb(244, 241, 238);
+}
+
+.hostjob, .host {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hostjob {
+    background-color: rgb(43, 169, 215);
+}
+
+.host {
+    background-color: blue;
+}
+
+.host a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Footer */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav.nav {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    nav.nav .list {
+        margin-bottom: 10px;
+    }
+
+    .footer-logo {
+        flex-direction: column;
+    }
+
+    .social-logo {
+        margin-top: 20px;
+    }
+
+    .footer .links {
+        flex-direction: column;
+    }
+
+    .footer .links .link1, .footer .links .scanner {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .about-section p, .about-section ul li {
+        font-size: 16px;
+    }
+}
+.footer{
+    background-color: rgb(23, 109, 45);
+ border: 2px solid rgb(23, 109, 45);
+ height: 300px;
+ display: flex;
+
+ align-items: center;
+ justify-content: space-around;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.link{
+    border: 2px solid rgb(247, 244, 246);
+    background-color: #fff;
+    border-radius: 25px;
+    height: 150px;
+    width: 451px;
+    margin-top: 6px;
+}
+.copyright{
+    /* border: 2px solid rgb(248, 245, 245); */
+    height: 300px;
+    width: 451px;
+    border-radius: 25px;
+   
+     /* margin-left: 10%; */
+
+}
+.copyrightlogo{
+ margin-left: 100px;
+text-align: center;
+margin-top: 9px;
+}
+
+ .footer-logo{
+     display: flex;
+     align-items: center;
+     justify-content: center;margin-top: 24px;
+
+ }
+
+img{ 
+    margin: 0px 70px 0px 0px;
+    height: 50px;
+    width: 50px;
+    border-radius: 7px;
+}
+/* .vl1{
+    border-left: 2px solid black;
+    height: 50px;
+} */
+ .terms{
+    display: inline-block;
+    text-align: justify;
+
+ }
+ .links{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ }
+ .link1{ 
+   margin-right: 22px;
+ }
+ .scanner img{
+    height: 90px;
+    width: 90px;
+   
+ }
+ .login-img{
+    width: 200px;
+    margin-top: 20px;
+ }
+ .link1 h1{
+    margin-bottom: 20px;
+ }
+ .instruction{
+    border: 0px solid #d7d0d0;
+    height: 200px;
+    margin-top: 40px;
+    margin-bottom: -50px;
+    background-color: #d7d0d0;
+
+ }
+ .instruct{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+ }
+ .account{
+width: 40%;
+   
+ }
+ .search{
+    width: 40%;
+}
+.submit{
+    width: 40%;
+ }
+ .instruct h1{
+    font-size: 22px;
+ }
+ .create{
+display: flex;
+align-items: center;
+justify-content: center;
+ }
+ button {
+    background-color: rgb(41, 159, 17);
+    padding: 13px 30px;
+    border: 2px solid green;
+    border-radius: 5px;
+}

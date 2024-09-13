@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>job portal</title>
     <link rel="stylesheet" href="style.css">
- <link rel="stylesheet" href="showjob.css">
- <script src="showjobs.js"></script>
- <script src="search.js"></script>
+ <!-- <link rel="stylesheet" href="showjob.css"> -->
+ <!-- <script src="showjobs.js"></script> -->
+ <!-- <script src="search.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 </head>
 <body>
-<header>
+<header id="main-header" >
 <nav class="nav">
 <div class="list">
     <a class="home" href="mainhome.html" style="text-decoration: none;">Home
@@ -26,9 +26,9 @@
             <option>info</option></select> -->
     </a>
     <a class="candidate">Candidate </a>
-    <a class="page">Pages </a>
-    <a class="contact">Contact </a>
-
+    <!-- <a class="page">Pages </a> -->
+    <a class="contact" href="aboutus.html">About-Us </a>
+<a href="contactus.html">Contact-Us</a>
 </div>
 <div class="button">
 <button style="background-color: rgb(43, 169, 215);"><a href="login_signin.html" style="text-decoration: none; padding-right: 34px;"> Employer login</a></button>
@@ -39,11 +39,17 @@
 </nav>
 
 <div class="searchbox">
-<div class="search-container">
+<!-- <div class="search-container">
     <input type="text" placeholder="Search by job/city">
     <input type="text" placeholder="Anywhere in India">
     <button style="font-weight: bold;">Search jobs</button>
+</div> -->
+<div class="search-container">
+    <input type="text" id="search-job-title" placeholder="Search by job/city">
+    <input type="text" id="search-location" placeholder="Anywhere in India">
+    <button id="search-jobs-btn" style="font-weight: bold;">Search jobs</button>
 </div>
+
 </div>
 
 <div class="tagline">
@@ -294,6 +300,9 @@
         });
 
 </script>
+
+
+
 <script src="mainhome.js" type="module"></script>
 </body>
 </html>

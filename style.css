@@ -1,12 +1,18 @@
 *{ 
     font-family: sans-serif;
-    font-size: 2vh;
-    margin: 0px; 
+   
+    font-weight: 600;
+    font-size: 4rem;
+    margin: 0px;
+   
     border: border-box;
     
 }
 body{
     background-color:  #ffffff;
+}
+a{
+    font-size: 18px;
 }
 header{
     height: 680px;
@@ -14,7 +20,62 @@ header{
     background-image: url(img.jpg);
     /* z-index: 0; */
 
+}/* Default styles */
+/* .nav-menu {
+    display: flex;
+    justify-content: space-around;
+  
+    
 }
+.nav-menu .nav-item {
+    /* color: white; */
+    text-decoration: none;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu .nav-item:hover {
+    background-color: #ff6f61; /* Light red background on hover */
+    color: white;
+} */
+nav.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 50px;
+    border-bottom: 1px solid lightgray;
+    font-size: 18px;
+}
+
+.nav .list a {
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav .list a:hover {
+    color: rgb(43, 169, 215);
+}
+
+.nav .button button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav .button button:first-child {
+    background-color: rgb(43, 169, 215);
+    color: white;
+    margin-right: 10px;
+}
+
+
 .tagline{
     padding: 20px;
     margin-left: 57%;
@@ -42,7 +103,7 @@ header{
      width: 100%; 
      top: 0px;
      border: 2px solid hsl(220, 13%, 95%);
-     /* z-index: 4; */
+     z-index: 4;
      /* transition: background-color 0.4s ease-in-out; */
      
 }
@@ -247,8 +308,8 @@ article{background-color: hsl(0, 0%, 100%);
      /* Space between the job cards */
     padding: 20px;
     padding-top: 20px; 
-    margin-left: 10%;
-    width: 80%;
+    margin-left: 8%;
+    width: 90%;
 }
 
 .type1:hover{
@@ -532,3 +593,430 @@ display: flex;
 align-items: center;
 justify-content: center;
  }
+ /* Global styles for all devices */
+
+* {
+    font-family: sans-serif;
+    font-size: 2vh;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Default styles for desktop and larger screens */
+
+header {
+    height: 680px;
+    background-size: cover;
+    background-image: url(img.jpg);
+}
+
+.tagline {
+    padding: 20px;
+    margin-left: 57%;
+    margin-top: 10%;
+    height: 10px;
+}
+
+.tagline a {
+    font-size: 53px;
+    text-decoration: none;
+    color: #0c8208;
+}
+
+.tagline h1 {
+    font-size: 53px;
+    padding-left: 34px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: sticky; */
+    background: white;
+    width: 100%;
+    top: 0px;
+    border: 2px solid hsl(220, 13%, 95%);
+}
+
+.list {
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-left: 53vh;
+}
+
+.button {
+    margin-top: 25px;
+    margin-right: 32px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: rgb(41, 159, 17);
+    padding: 13px 30px;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+
+.search-container {
+    width: 40%;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: left;
+    margin-left: 100px;
+}
+
+/* Media queries for tablet (768px and above) */
+@media (max-width: 1024px) {
+    .tagline {
+        margin-left: 30%;
+        margin-top: 12%;
+    }
+
+    .tagline a,
+    .tagline h1 {
+        font-size: 42px;
+    }
+
+    .list {
+        margin-left: 20vh;
+    }
+
+    .button {
+        margin-right: 20px;
+    }
+
+    .search-container {
+        width: 60%;
+    }
+
+    .jobtype1 {
+        grid-template-columns: repeat(3, 1fr); /* 3 job cards per row */
+    }
+}
+
+/* Media queries for mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .tagline {
+        margin-left: 10%;
+        margin-top: 15%;
+    }
+
+    .tagline a,
+    .tagline h1 {
+        font-size: 32px;
+    }
+
+    .list {
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .button {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+
+    .searchbox {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .jobtype1 {
+        grid-template-columns: repeat(2, 1fr); /* 2 job cards per row */
+    }
+
+    .jobcateg {
+        width: 150px;
+        height: 250px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+/* Media queries for very small devices (max-width: 480px) */
+/* @media (max-width: 480px) {
+    .tagline a,
+    .tagline h1 {
+        font-size: 24px;
+    }
+    nav.nav {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    
+    .list a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .jobtype1 {
+        grid-template-columns: repeat(1, 1fr); /* 1 job card per row 
+    }
+
+    .search-container input[type="text"] {
+        font-size: 14px;
+    }
+} */
+@media (max-width: 480px) {
+    /* Adjust tagline font sizes for smaller screens */
+    .tagline a,
+    .tagline h1 {
+        font-size: 24px;
+    }
+
+    /* Navbar adjustments */
+    .nav {
+        flex-direction: column;
+        padding: 10px 20px;
+        background-color: #fff; /* Ensure background color for visibility */
+    }
+
+    .nav .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align items vertically */
+        width: 100%; /* Full width for list items */
+    }
+
+    .nav .list a {
+        margin: 10px 0; /* Space between nav links */
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+
+    .nav .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align buttons */
+        width: 100%; /* Full width for buttons */
+        margin-top: 10px; /* Space above buttons */
+    }
+
+    .nav .button button {
+        width: 100%; /* Make buttons full width */
+        padding: 15px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Adjust font size for buttons */
+        margin: 5px 0; /* Space between buttons */
+    }
+
+    /* Job type section adjustments */
+    .jobtype1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 1 job card per row */
+        gap: 15px; /* Space between job cards */
+    }
+
+    /* Search container adjustments */
+    .search-container input[type="text"] {
+        font-size: 14px; /* Smaller font size for search inputs */
+        padding: 10px; /* Increase padding for better touch targets */
+    }
+
+    .search-container button {
+        font-size: 14px; /* Adjust button font size */
+        padding: 10px; /* Increase padding for better touch targets */
+    }
+}
+
+button {
+    background-color: rgb(41, 159, 17);
+    padding: 13px 30px;
+    border: 2px solid green;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #a2adb8;
+    transform: scale(1.1);
+}
+.type1 {
+    margin-top: 10px;
+    height: 300px;
+    width: 250px;
+    background-color: #fff;
+    border: 2px solid rgb(247, 247, 244);
+    border-radius: 10px;
+    box-shadow: 3px 5px rgb(248, 244, 244);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.type1:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.tagline h1, .tagline a {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+.footer-logo img {
+    transition: transform 0.5s ease;
+}
+
+.footer-logo img:hover {
+    transform: rotate(360deg);
+}
+.jobcateg {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.job-by-name .jobcateg:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.job-by-name .jobcateg:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.job-by-name .jobcateg:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.job-by-name .jobcateg:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.search-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+header {
+    transition: background-image 0.8s ease;
+}
+
+/* Centering and spacing for the search box */
+.searchbox {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 50px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 50px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* Glowing shadow */
+}
+
+/* Styling for input fields */
+.search-container input {
+    padding: 12px 20px;
+    border: 2px solid #007bff;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+    width: 250px;
+    margin-right: 10px;
+    transition: box-shadow 0.3s ease, width 0.4s ease;
+}
+
+/* Hover and focus effects on input fields */
+.search-container input:focus {
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    width: 300px; /* Expands when focused */
+}
+
+/* Styling for the search button */
+#search-jobs-btn {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the search button */
+#search-jobs-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Adding subtle animations */
+.search-container input,
+#search-jobs-btn {
+    animation: fadeInUp 0.7s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional media query for responsiveness */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+    }
+    
+    .search-container input {
+        margin: 10px 0;
+        width: 100%; /* Full width on small screens */
+    }
+    
+    #search-jobs-btn {
+        width: 100%; /* Full width on small screens */
+    }
+}
+

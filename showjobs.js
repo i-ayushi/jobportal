@@ -55,7 +55,9 @@ const loadJobs = async () => {
             applyButton.textContent = 'Apply';
             applyButton.classList.add('apply-btn');
             applyButton.addEventListener('click', () => {
-                applyForJob(job);
+                // applyForJob(job);
+                window.location.href = 'jobapplication.html';
+
             });
             // Append elements to job card
             jobCard.appendChild(jobTitle);

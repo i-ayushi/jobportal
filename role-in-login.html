@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    body {
+        background-color: #c9d6ff;
+        background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    }
+    
+    .container {
+        background: #fff;
+        width: 450px;
+        padding: 1.5rem;
+        margin: 50px auto;
+        border-radius: 10px;
+        box-shadow: 0 20px 35px rgba(0, 0, 1, 0.2);
+    }
+    
+    form {
+        margin: 0 2rem;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 1.3rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .role-options {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .role-option {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 10px;
+    }
+    
+    .role-option input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid #757575;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        position: relative;
+    }
+    
+    .role-option input[type="radio"]:checked {
+        background-color: hsl(327, 90%, 28%);
+        border-color: hsl(327, 90%, 28%);
+    }
+    
+    .role-option img {
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+    }
+    
+    .role-option label {
+        cursor: pointer;
+        font-size: 16px;
+        color: #757575;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+    
+    .role-option input[type="radio"]:checked + label {
+        color: hsl(327, 90%, 28%);
+    }
+    
+    button {
+        font-size: 1.1rem;
+        padding: 8px 0;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        background: rgb(125, 125, 235);
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    button:hover {
+        background: #07001f;
+    }
+    
+    /* For hover effect on the role options */
+    .role-option:hover label {
+        color: hsl(327, 90%, 28%);
+    }
+    
+    .role-option:hover input[type="radio"] {
+        border-color: hsl(327, 90%, 28%);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="signup-form">
+            <h2 class="form-title">Sign Up</h2>
+            
+            <label id="roles" for="role">Sign up as:</label>
+            
+            <div class="role-options">
+                <div class="role-option">
+                    <input type="radio" id="employer" name="role" value="employer" required>
+                    <label id="emp" for="employer">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/company.png" alt="Employer Logo">
+                        Employer
+                    </label>
+                </div>
+    
+                <div class="role-option">
+                    <input type="radio" id="job-seeker" name="role" value="job-seeker" required>
+                    <label id="job" for="job-seeker">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="Job Seeker Logo">
+                        Job Seeker
+                    </label>
+                </div>
+            </div>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('signup-form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Get the selected role
+        const selectedRole = document.querySelector('input[name="role"]:checked');
+
+        if (selectedRole) {
+            // Redirect based on the selected role
+            if (selectedRole.value === 'employer') {
+                window.location.href = 'employer-login.html';
+            } else if (selectedRole.value === 'job-seeker') {
+                window.location.href = 'jobseeker-login.html';
+            }
+        }
+    });
+});
+
+    </script>
+
+
+</body>
+</html>

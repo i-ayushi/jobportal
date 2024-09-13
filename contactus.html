@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Job Portal</title>
+    <link rel="stylesheet" href="contactus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<header id="main-header">
+<nav class="nav">
+    <div class="list">
+        <a class="home" href="mainhome.html" style="text-decoration: none;">Home</a>
+        <a class="employer" style="text-decoration: none;">Employer</a>
+        <a class="candidate" style="text-decoration: none;">Candidate</a>
+        <a class="page" style="text-decoration: none;">Pages</a>
+        <a class="" href="aboutus.html" style="text-decoration: none;">About-US</a>
+        <a class="contact" style="text-decoration: none;">Contact Us</a>
+    </div>
+    <div class="button">
+        <button style="background-color: rgb(43, 169, 215);">
+            <a href="login_signin.html" style="text-decoration: none; padding-right: 34px;">Employer login</a>
+        </button>
+        <button>
+            <a href="login_signin.html" style="text-decoration: none;">Candidate register</a>
+        </button>
+    </div>
+</nav>
+</header>
+
+<section class="contact-section" style="background-color: rgb(244, 241, 238); padding: 50px 0;">
+    <div class="container" style="max-width: 1200px; margin: auto; padding: 0 20px;">
+        <h1 style="text-align: center; font-size: 34px; margin-bottom: 20px;">Contact Us</h1>
+        <p style="text-align: center; font-size: 18px; line-height: 1.6;">We'd love to hear from you! Whether you have a question about our services, need support, or just want to give us feedback, feel free to get in touch using the contact form below.</p>
+        
+        <div class="contact-form" style="max-width: 600px; margin: auto;">
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea><br>
+        
+                <button type="submit">Submit</button>
+            </form>
+            
+            <div id="successMessage"></div>
+        
+        </div>
+    </div>
+</section>
+<!-- <div id="successMessage"></div> -->
+<footer>
+    <div class="footer">
+        <div class="copyright"> 
+            <div class="footer-logo">
+                <div class="namelogo"><img src="logo.png" alt=""></div>
+                <div class="vl1"></div>
+                <div class="sociallink">
+                    <h1>Follow Us On Social Media</h1>
+                    <div class="social-logo">
+                        <i class="fa-brands fa-instagram" style="font-size: 2rem; color: aliceblue;"></i>
+                        <i class="fa-brands fa-linkedin" style="font-size: 2rem; color: aliceblue;"></i>
+                        <i class="fa-brands fa-twitter" style="font-size: 2rem; color: aliceblue;"></i>
+                        <i class="fa-brands fa-github" style="font-size: 2rem; color: aliceblue;"></i>
+                        <i class="fa-brands fa-youtube" style="font-size: 2rem; color: aliceblue;"></i>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="terms">
+                <div class="copyrightlogo">
+                    <div style="display: flex;">
+                        <i class="fa-regular fa-copyright"></i>
+                        <div>2024 Ayushi</div>
+                        <div class="vl"></div>
+                        <div>All rights reserved</div>
+                    </div>
+                    <div>Privacy Policy</div>
+                    <div>Terms & Conditions</div>
+                </div>
+            </div>
+        </div>
+        <div class="links">
+            <div class="link1">
+                <h1>Apply on the Go</h1>
+                <p>Get real-time job updates on our App</p>
+                <img src="img.jpg" alt="" class="login-img">
+            </div>
+            <div class="scanner"><img src="logo.png" alt=""></div>
+        </div>
+    </div>
+</footer>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getFirestore, addDoc, collection, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAS3xB8yi5Yc8R9jBI3_txpqQiNe3kzsdY",
+        authDomain: "login-form-e4c1d.firebaseapp.com",
+        projectId: "login-form-e4c1d",
+        storageBucket: "login-form-e4c1d.appspot.com",
+        messagingSenderId: "4685451629",
+        appId: "1:4685451629:web:17d844b47ea93e08580a64"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Function to show success or error message
+    function showMessage(message, divId) {
+        const messageDiv = document.getElementById(divId);
+        messageDiv.style.display = "block";
+        messageDiv.innerHTML = message;
+        messageDiv.style.opacity = 1;
+        setTimeout(() => {
+            messageDiv.style.opacity = 0;
+            setTimeout(() => {
+                messageDiv.style.display = "none";
+            }, 1000); // Ensure it's hidden after fading out
+        }, 5000);
+    }
+
+    // Reference to the form element
+    const contactForm = document.getElementById('contactForm');
+
+    // Listen for form submission
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get the values from the form fields
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        try {
+            // Add message to the Firestore database
+            await addDoc(collection(db, 'messages'), {
+                name: name,
+                email: email,
+                message: message,
+                timestamp: serverTimestamp() // Automatically generates a timestamp
+            });
+
+            // Display success message
+            showMessage('Message submitted successfully!', 'successMessage');
+
+            // Reset the form after submission
+            contactForm.reset();
+        } catch (error) {
+            console.error('Error submitting message: ', error);
+            showMessage('Error submitting message. Please try again.', 'successMessage');
+        }
+    });
+</script>
+</body>
+</html>

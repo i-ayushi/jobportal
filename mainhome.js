@@ -10,65 +10,55 @@ const firebaseConfig = {
     storageBucket: "login-form-e4c1d.appspot.com",
     messagingSenderId: "4685451629",
     appId: "1:4685451629:web:17d844b47ea93e08580a64"
-  };
+};
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+let JOBS = [];
+
 
 // Function to retrieve and display job listings
 const loadJobs = async () => {
-    const jobListingsContainer = document.getElementById('jobtype1');
-
     try {
         const querySnapshot = await getDocs(collection(db, "jobs"));
+        JOBS = [];
         querySnapshot.forEach((doc) => {
             const job = doc.data();
+            JOBS.push(job);
+        });
+        fillJobs(JOBS);
 
-            // // Create job card
-            // const jobCard = document.createElement('div');
-            // jobCard.classList.add('job-card');
+    } catch (error) {
+        console.error("Error fetching job posts: ", error);
+    }
 
-            // // Job Title
-            // const jobTitle = document.createElement('h2');
-            // jobTitle.textContent = job.title;
+    let searchContainer = document.querySelector('.search-container');
 
-            // // Job Description
-            // const jobDescription = document.createElement('p');
-            // jobDescription.textContent = job.description;
+    console.log(searchContainer);
 
-            // // Job Requirements
-            // const jobRequirements = document.createElement('p');
-            // jobRequirements.classList.add('job-info');
-            // jobRequirements.textContent = `Requirements: ${job.requirements}`;
+    let searchButton = searchContainer.querySelector('button');
+    searchButton.addEventListener('click', searchFilterForJob);
+};
 
-            // // Job Location
-            // const jobLocation = document.createElement('p');
-            // jobLocation.classList.add('job-info');
-            // jobLocation.textContent = `Location: ${job.location}`;
+function searchFilterForJob(){
+    // .search-container's first and 2nd input fields
+    let searchContainer = document.querySelector('.search-container');
+    let searchInput2 = searchContainer.querySelectorAll('input')[0].value;
+    let searchInput1 = searchContainer.querySelectorAll('input')[1].value;
+    console.log(searchInput1, searchInput2);
 
-            // // Job Salary
-            // const jobSalary = document.createElement('p');
-            // jobSalary.classList.add('job-salary');
-            // jobSalary.textContent = `Salary: ${job.salary}`;
-
-            // const applyButton = document.createElement('button');
-            // applyButton.textContent = 'Apply';
-            // applyButton.classList.add('apply-btn');
-            // applyButton.addEventListener('click', () => {
-            //     applyForJob(job);
-            // });
-            // // Append elements to job card
-            // jobCard.appendChild(jobTitle);
-            // jobCard.appendChild(jobDescription);
-            // jobCard.appendChild(jobRequirements);
-            // jobCard.appendChild(jobLocation);
-            // jobCard.appendChild(jobSalary);
-            // jobCard.appendChild(applyButton);
-
-            // Append job card to the container
-            
-            jobListingsContainer.innerHTML+=`
-             <div class="type1">
+    let filteredJobs = JOBS.filter(job => {
+        return job.title.toLowerCase().includes(searchInput2?.toLowerCase()) && job?.location?.toLowerCase().includes(searchInput1?.toLowerCase());
+    });
+    fillJobs(filteredJobs);
+}
+function fillJobs(JOBS){
+    let jobListingsContainer = document.getElementById('jobtype1');
+    jobListingsContainer.innerHTML = '';
+    JOBS.forEach(job => {
+        jobListingsContainer.innerHTML+=`
+        
+        <div class="type1">
         <div class="box">Full Time</div>
 
         <i class="fa-solid fa-heart"  id="heart"></i>
@@ -79,15 +69,10 @@ const loadJobs = async () => {
         </div>
      <button class="apply"><a href="jobapplication.html" style=" text-decoration:none">APPLY NOW</a></button>
     </div>
-            `
-            
-        });
-
-
-    } catch (error) {
-        console.error("Error fetching job posts: ", error);
-    }
-};
+        `
+    });
+}
 
 // Call the function to load jobs when the page loads
 window.onload = loadJobs;
+
