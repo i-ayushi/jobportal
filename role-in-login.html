@@ -144,7 +144,8 @@
         </form>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('signup-form');
 
     form.addEventListener('submit', (event) => {
@@ -160,9 +161,13 @@
             } else if (selectedRole.value === 'job-seeker') {
                 window.location.href = 'jobseeker-login.html';
             }
+        } else {
+            // Handle the case where no role is selected
+            alert('Please select a role before submitting the form.');
         }
     });
 });
+
 
     </script>
 

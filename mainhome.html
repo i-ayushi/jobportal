@@ -31,11 +31,61 @@
 <a href="contactus.html">Contact-Us</a>
 </div>
 <div class="button">
-<button style="background-color: rgb(43, 169, 215);"><a href="login_signin.html" style="text-decoration: none; padding-right: 34px;"> Employer login</a></button>
-    <button>
+<button style="background-color: rgb(43, 169, 215);"><a href="role-in-login.html" style="text-decoration: none; padding-right: 4px;"> Register Yourself</a></button>
+
+      <!-- Other navigation items -->
+        <a href="profile.html">
+            <!-- <img id="profile-thumbnail" src="images/default-avatar.png" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%;"> -->
+            <i id="user-avatar" class="fas fa-user-circle user-logo" style="font-size: 50px;  margin-right: 40px;  "></i>
+        </a>
+    
+    
+
+ 
+    <!-- <button>
         <a href="login_signin.html" style="text-decoration: none;">Candidate register </a>
-        </button>
+        </button> -->
 </div>
+<!-- Profile Modal
+<div id="profile-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span> -->
+        <!-- <div class="profile-info">
+            <img id="profile-photo" src="" alt="Profile Photo" style="width: 100px; height: 100px; border-radius: 50%;"/>
+            <h2 id="profile-name">Name</h2>
+            <p id="profile-email">Email</p>
+            <p id="profile-role">Role</p>
+            <button id="update-profile"><a href="profile-show.html" style="text-decoration: none;">Update Profile</a></button>
+            <button id="logout">Logout</button>
+        </div> -->
+        <!-- <div class="profile-info">
+            <img id="profile-photo" src="" alt="Profile Photo" style="width: 100px; height: 100px; border-radius: 50%;"/>
+            <h2 id="profile-name">Name</h2>
+            <p id="profile-email">Email</p>
+            <p id="profile-role">Role</p>
+            <button id="update-profile"><a href="profile-show.html" style="text-decoration: none;">Update Profile</a></button>
+            <button id="logout">Logout</button>
+        </div>
+    </div>
+</div>
+
+Profile Photo on Main Page -->
+<!-- <div class="profile-photo-container">
+    <img id="profile-thumbnail" src="img.jpg" alt="Profile Photo" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;"/>
+</div> -->
+<!-- <div id="profile-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="profile-info">
+            <img id="profile-photo" src="" alt="Profile Photo" style="width: 100px; height: 100px; border-radius: 50%;"/>
+            <h2 id="profile-name">Name</h2>
+            <p id="profile-email">Email</p>
+            <p id="profile-role">Role</p>
+            <button id="update-profile"><a href="profile-show.html" style="text-decoration: none;">Update Profile</a></button>
+            <button id="logout">Logout</button>
+        </div>
+    </div>
+</div> -->
 </nav>
 
 <div class="searchbox">
@@ -240,7 +290,7 @@
 <footer><div class="footer">
     <div class="copyright"> 
         <div class="footer-logo">
-            <div class="namelogo"><img src="logo.png" alt=""></div>
+            <div class="namelogo"><img src="img.jpg" alt=""></div>
             <div class="vl1"></div>
         <div class="sociallink">
             <h1>Follow Us On social Media</h1>
@@ -274,7 +324,7 @@
         <p>Get real time job updates on our App</p>
         <img src="img.jpg" alt="" class="login-img">
     </div>
-    <div class="scanner"><img src="logo.png" alt=""></div>
+    <div class="scanner"><img src="img.jpg" alt=""></div>
 </div>
 </div>
 
@@ -299,10 +349,61 @@
             toggleButtonColors(document.getElementById('button2'), document.getElementById('button1'));
         });
 
+</script><script>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore(app);
+
+// Function to load user data and set profile picture
+const loadUserData = async (userId) => {
+    const userRef = doc(db, "users", userId);
+    const userDoc = await getDoc(userRef);
+    
+    if (userDoc.exists()) {
+        const userData = userDoc.data();
+
+        // Set profile name, email, role, and profile picture in the modal
+        document.getElementById("profile-name").textContent = `${userData.firstName} ${userData.lastName}`;
+        document.getElementById("profile-email").textContent = userData.email;
+        document.getElementById("profile-role").textContent = userData.role ? 'Employer' : 'Job Seeker';
+
+        // Set profile picture or fallback to default avatar
+        const profileImage = userData.image || 'images/default-avatar.png';
+        document.getElementById("profile-photo").src = profileImage;
+        
+        // Update profile picture in the nav bar
+        document.getElementById("profile-thumbnail").src = profileImage;
+    } else {
+        console.log("No such user document!");
+    }
+};
+
+// On login, load the user profile picture
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        loadUserData(user.uid);
+    } else {
+        // If not logged in, redirect to login page
+        window.location.href = 'login.html';
+    }
+});
+
 </script>
-
-
-
 <script src="mainhome.js" type="module"></script>
 </body>
 </html>

@@ -69,7 +69,7 @@ auth.onAuthStateChanged((user) => {
                 if (doc.exists()) {
                     const data = doc.data();
                     if (!data.role) {
-                        window.location.href = 'homepage.html';
+                        window.location.href = 'mainhome.html';
                     }
                 }
             })

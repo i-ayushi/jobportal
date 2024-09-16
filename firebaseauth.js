@@ -55,7 +55,7 @@
                 window.location.href='jobhost.html';
             }
             else{
-                window.location.href='homepage.html';
+                window.location.href='mainhome.html';
             }
         })
         .catch((error)=>{
@@ -89,9 +89,9 @@
         localStorage.setItem('loggedInUserId', user.uid);
         localStorage.setItem('isEmployer', isEmployer);
         if (isEmployer){
-            window.location.href='jobhost.html';
+            window.location.href='profile.html';
         }else{
-            window.location.href='homepage.html';
+            window.location.href='profile.html';
         }
     })
     .catch((error)=>{
@@ -105,31 +105,36 @@
     })
  })
 
+ document.getElementById("submitJobSeekerSignUp").addEventListener("click", async (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById("jsEmail").value;
+    const password = document.getElementById("jsPassword").value;
+    const fName = document.getElementById("jsFName").value;
+    const lName = document.getElementById("jsLName").value;
+    const profilePicture = document.getElementById("jsProfilePicture").files[0];
 
-//  Now that we have the authentication code, we can add the code to the mainhome.js file to restrict access to the jobhost.html page.
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
-auth.onAuthStateChanged((user) => {
-    if (user) {
-        const userId = user.uid;
-        const docRef = doc(db, "users", userId);
-        getDoc(docRef)
-            .then((doc) => {
-                if (doc.exists()) {
-                    const data = doc.data();
-                    if (data.role) {
-                        window.location.href = 'jobhost.html';
-                    }
-                }
-            })
-            .catch((error) => {
-                console.error("Error getting document:", error);
-            });
+        // Upload profile picture to Firebase Storage
+        const storageRef = ref(storage, `profilePictures/${user.uid}`);
+        await uploadBytes(storageRef, profilePicture);
+        const profilePicURL = await getDownloadURL(storageRef);
+
+        // Save user data along with the profile picture URL to Firestore
+        await setDoc(doc(db, "users", user.uid), {
+            firstName: fName,
+            lastName: lName,
+            email: email,
+            role: "jobSeeker",
+            profileImage: profilePicURL
+        });
+
+        console.log("User registered and profile image saved!");
+        window.location.href = "profile-show.html"; // Redirect after registration
+    } catch (error) {
+        console.error("Error registering user:", error);
     }
-    else {
-        window.location.href = 'homepage.html';
-    }
-})
-
-// Now, when a user tries to access the jobhost.html page, they will be redirected to the homepage.html page if they are not logged in or if they are not an employer. This will help ensure that only authenticated employers can access the jobhost.html page.
-// code for jobhost.js
-
+});

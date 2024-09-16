@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Seeker Register & Login</title>
+    <title> Register & Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="loginstyle.css">
     <script type="module" src="firebaseauth.js"></script>
 </head>
 <body>
     <div class="container" id="signup" style="display:none;">
-      <h1 class="form-title">Job Seeker Register</h1>
+      <h1 class="form-title">EmployerRegister</h1>
       <form>
         <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
         <div class="input-group">
@@ -33,6 +33,11 @@
             <input type="password" id="jsPassword" placeholder="Password" required>
             <label for="jsPassword">Password</label>
         </div>
+        <div class="input-group">
+            <i class="fas fa-image"></i>
+            <input type="file" id="jsProfilePicture" accept="image/*">
+            <label for="jsProfilePicture">Profile Picture</label>
+        </div>
        <button class="btn" id="submitJobSeekerSignUp">Sign Up</button>
       </form>
       <p class="or">----------or--------</p>
@@ -47,7 +52,7 @@
     </div>
 
     <div class="container" id="signIn">
-        <h1 class="form-title">Job Seeker Sign In</h1>
+        <h1 class="form-title">Employer Sign In</h1>
         <form >
           <div id="signInMessage" class="messageDiv" style="display:none;"></div>
 
@@ -62,7 +67,7 @@
               <label for="jsSignInPassword">Password</label>
           </div>
           <!-- input for role and value false bool and hidded -->
-          <input type="hidden" id="jsRole" value="true">
+          <input type="hidden" id="jsRole" value="false">
           <p class="recover">
             <a href="#">Recover Password</a>
           </p>

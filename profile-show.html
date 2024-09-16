@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Update Profile</title>
+
+   <!-- Custom CSS file link -->
+   <link rel="stylesheet" href="file.css">
+
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f0f0f0;
+         margin: 0;
+         padding: 0;
+      }
+
+      .update-profile {
+         max-width: 600px;
+         margin: 100px auto;
+         background-color: #fff;
+         padding: 20px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         border-radius: 8px;
+      }
+
+      .update-profile img {
+         width: 100px;
+         height: 100px;
+         border-radius: 50%;
+         display: block;
+         margin: 0 auto 20px;
+      }
+
+      .update-profile h3 {
+         margin-bottom: 20px;
+         font-size: 24px;
+         text-align: center;
+      }
+
+      .inputBox {
+         width: 100%;
+         margin-bottom: 20px;
+      }
+
+      .inputBox span {
+         display: block;
+         font-size: 14px;
+         margin-bottom: 5px;
+      }
+
+      .inputBox .box {
+         width: 100%;
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+      }
+
+      .btn, .delete-btn {
+         display: block;
+         width: 100%;
+         padding: 10px;
+         background-color: blue;
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         text-align: center;
+         cursor: pointer;
+         margin-top: 20px;
+      }
+
+      .btn:hover, .delete-btn:hover {
+         background-color: darkblue;
+      }
+
+      .message {
+         background-color: red;
+         color: white;
+         padding: 10px;
+         margin-bottom: 10px;
+         border-radius: 5px;
+         text-align: center;
+      }
+   </style>
+</head>
+<body>
+   
+<div class="update-profile">
+
+   <!-- Display User Image -->
+   <img id="userImage" src="img.jpg" alt="Profile Picture">
+
+   <!-- Form for updating profile -->
+   <form id="updateProfileForm">
+      <div id="message"></div>
+
+      <div class="flex">
+         <div class="inputBox">
+            <span>Username :</span>
+            <input type="text" id="update_name" class="box" placeholder="Enter username" required>
+            <span>Your email :</span>
+            <input type="email" id="update_email" class="box" placeholder="Enter email" required>
+            <span>Update your pic :</span>
+            <input type="file" id="update_image" class="box" accept="image/jpg, image/jpeg, image/png">
+         </div>
+         <div class="inputBox">
+            <span>Old password :</span>
+            <input type="password" id="old_pass" class="box" placeholder="Enter previous password">
+            <span>New password :</span>
+            <input type="password" id="new_pass" class="box" placeholder="Enter new password">
+            <span>Confirm password :</span>
+            <input type="password" id="confirm_pass" class="box" placeholder="Confirm new password">
+         </div>
+      </div>
+
+      <button type="submit" class="btn">Update Profile</button>
+      <a href="mainhome.html" class="delete-btn">Go Back</a>
+   </form>
+
+</div>
+
+<!-- Firebase JS SDKs -->
+<script type="module">
+   // Import Firebase SDKs
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+   import { getAuth, updateProfile, updateEmail, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+   import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+   import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-storage.js";
+
+   // Your Firebase configuration
+   const firebaseConfig = {
+      apiKey: "AIzaSyAS3xB8yi5Yc8R9jBI3_txpqQiNe3kzsdY",
+      authDomain: "login-form-e4c1d.firebaseapp.com",
+      projectId: "login-form-e4c1d",
+      storageBucket: "login-form-e4c1d.appspot.com",
+      messagingSenderId: "4685451629",
+      appId: "1:4685451629:web:17d844b47ea93e08580a64"
+   };
+
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+   const auth = getAuth();
+   const db = getFirestore();
+   const storage = getStorage();
+
+//    document.getElementById('updateProfileForm').addEventListener('submit', async function(e) {
+//       e.preventDefault();
+
+//       const name = document.getElementById('update_name').value;
+//       const email = document.getElementById('update_email').value;
+//       const oldPass = document.getElementById('old_pass').value;
+//       const newPass = document.getElementById('new_pass').value;
+//       const confirmPass = document.getElementById('confirm_pass').value;
+//       const image = document.getElementById('update_image').files[0];
+//       const messageBox = document.getElementById('message');
+
+//       messageBox.innerHTML = ""; // Clear previous messages
+
+//       try {
+//          // Get current user
+//          const user = auth.currentUser;
+
+//          // Validate passwords
+//          if (newPass || confirmPass) {
+//             if (newPass !== confirmPass) {
+//                messageBox.innerHTML = '<div class="message">Confirm password does not match!</div>';
+//                return;
+//             }
+
+//             // Reauthenticate user before updating password
+//             const credential = EmailAuthProvider.credential(user.email, oldPass);
+//             await reauthenticateWithCredential(user, credential);
+//             await updatePassword(user, newPass);
+//          }
+
+//          // Update email if changed
+//          if (email !== user.email) {
+//             await updateEmail(user, email);
+//          }
+
+//          // Update profile information
+//          await updateProfile(user, { displayName: name });
+
+//          // Handle image upload
+//          if (image) {
+//             if (image.size > 2000000) { // 2MB limit
+//                messageBox.innerHTML = '<div class="message">Image size is too large!</div>';
+//                return;
+//             }
+
+//             const storageRef = ref(storage, 'profile_images/' + user.uid + '/' + image.name);
+//             await uploadBytes(storageRef, image);
+//             const imageUrl = await getDownloadURL(storageRef);
+//             await updateDoc(doc(db, "users", user.uid), { profilePicture: imageUrl });
+
+//             // Update profile picture on UI
+//             document.getElementById('userImage').src = imageUrl;
+//          }
+
+//          // Simulate successful update
+//          alert('Profile updated successfully!');
+//          window.location.href = 'mainhome.html'; // Redirect to home page
+//       } catch (error) {
+//          // Display error message
+//          messageBox.innerHTML = '<div class="message">' + error.message + '</div>';
+//       }
+//    });
+document.getElementById('updateProfileForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('update_name').value;
+    const email = document.getElementById('update_email').value;
+    const oldPass = document.getElementById('old_pass').value;
+    const newPass = document.getElementById('new_pass').value;
+    const confirmPass = document.getElementById('confirm_pass').value;
+    const image = document.getElementById('update_image').files[0];
+    const messageBox = document.getElementById('message');
+
+    messageBox.innerHTML = ""; // Clear previous messages
+
+    try {
+        const user = auth.currentUser;
+
+        if (newPass || confirmPass) {
+            if (newPass !== confirmPass) {
+                messageBox.innerHTML = '<div class="message">Confirm password does not match!</div>';
+                return;
+            }
+
+            const credential = EmailAuthProvider.credential(user.email, oldPass);
+            await reauthenticateWithCredential(user, credential);
+            await updatePassword(user, newPass);
+        }
+
+        if (email !== user.email) {
+            await updateEmail(user, email);
+        }
+
+        await updateProfile(user, { displayName: name });
+
+        if (image) {
+            if (image.size > 2000000) {
+                messageBox.innerHTML = '<div class="message">Image size is too large!</div>';
+                return;
+            }
+
+            const storageRef = ref(storage, 'profile_images/' + user.uid + '/' + image.name);
+            await uploadBytes(storageRef, image);
+            const imageUrl = await getDownloadURL(storageRef);
+            console.log("Image URL:", imageUrl);
+            await updateDoc(doc(db, "users", user.uid), { profilePicture: imageUrl });
+            document.getElementById('userImage').src = imageUrl;
+        }
+
+        alert('Profile updated successfully!');
+        window.location.href = 'mainhome.html';
+    } catch (error) {
+        console.error("Error updating profile:", error);
+        messageBox.innerHTML = '<div class="message">' + error.message + '</div>';
+    }
+});
+
+</script>
+
+</body>
+</html>
