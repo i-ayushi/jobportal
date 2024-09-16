@@ -1,6 +1,8 @@
 // Import the Firebase libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -15,6 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth();
 
 // Post Job Form Submission
 document.getElementById('job-form').addEventListener('submit', async (e) => {
@@ -53,5 +56,28 @@ document.getElementById('job-form').addEventListener('submit', async (e) => {
   
     catch (error) {
         console.error("Error adding document: ", error);
+    }
+});
+
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        console.log('User is logged in');
+        const userId = user.uid;
+        const docRef = doc(db, "users", userId);
+        getDoc(docRef)
+            .then((doc) => {
+                if (doc.exists()) {
+                    const data = doc.data();
+                    if (!data.role) {
+                        window.location.href = 'homepage.html';
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error("Error getting document:", error);
+            });
+    }
+    else {
+        window.location.href = 'homepage.html';
     }
 });

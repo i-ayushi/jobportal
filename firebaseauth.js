@@ -104,3 +104,32 @@
         }
     })
  })
+
+
+//  Now that we have the authentication code, we can add the code to the mainhome.js file to restrict access to the jobhost.html page.
+
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        const userId = user.uid;
+        const docRef = doc(db, "users", userId);
+        getDoc(docRef)
+            .then((doc) => {
+                if (doc.exists()) {
+                    const data = doc.data();
+                    if (data.role) {
+                        window.location.href = 'jobhost.html';
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error("Error getting document:", error);
+            });
+    }
+    else {
+        window.location.href = 'homepage.html';
+    }
+})
+
+// Now, when a user tries to access the jobhost.html page, they will be redirected to the homepage.html page if they are not logged in or if they are not an employer. This will help ensure that only authenticated employers can access the jobhost.html page.
+// code for jobhost.js
+
