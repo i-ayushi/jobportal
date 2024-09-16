@@ -3,37 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employer Register & Login</title>
+    <title>Job Seeker Register & Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="loginstyle.css">
     <script type="module" src="firebaseauth.js"></script>
 </head>
 <body>
     <div class="container" id="signup" style="display:none;">
-      <h1 class="form-title">Employer Register</h1>
-      <form method="post" action="">
+      <h1 class="form-title">Job Seeker Register</h1>
+      <form>
         <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
         <div class="input-group">
            <i class="fas fa-user"></i>
-           <input type="text"  id="eFName" placeholder="First Name" required>
-           <label for="eFName">First Name</label>
+           <input type="text" id="jsFName" placeholder="First Name" required>
+           <label for="jsFName">First Name</label>
         </div>
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input type="text"  id="eLName" placeholder="Last Name" required>
-            <label for="eLName">Last Name</label>
+            <input type="text" id="jsLName" placeholder="Last Name" required>
+            <label for="jsLName">Last Name</label>
         </div>
         <div class="input-group">
             <i class="fas fa-envelope"></i>
-            <input type="email"  id="eEmail" placeholder="Email" required>
-            <label for="eEmail">Email</label>
+            <input type="email" id="jsEmail" placeholder="Email" required>
+            <label for="jsEmail">Email</label>
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" id="ePassword"  placeholder="Password" required>
-            <label for="ePassword">Password</label>
+            <input type="password" id="jsPassword" placeholder="Password" required>
+            <label for="jsPassword">Password</label>
         </div>
-       <button class="btn" id="submitEmployerSignUp">Sign Up</button>
+       <button class="btn" id="submitJobSeekerSignUp">Sign Up</button>
       </form>
       <p class="or">----------or--------</p>
       <div class="icons">
@@ -47,24 +47,26 @@
     </div>
 
     <div class="container" id="signIn">
-        <h1 class="form-title">Employer Sign In</h1>
-        <form method="post" action="">
+        <h1 class="form-title">Job Seeker Sign In</h1>
+        <form >
           <div id="signInMessage" class="messageDiv" style="display:none;"></div>
 
           <div class="input-group">
               <i class="fas fa-envelope"></i>
-              <input type="email" id="eSignInEmail" placeholder="Email" required>
-              <label for="eSignInEmail">Email</label>
+              <input type="email" id="jsSignInEmail" placeholder="Email" required>
+              <label for="jsSignInEmail">Email</label>
           </div>
           <div class="input-group">
               <i class="fas fa-lock"></i>
-            <input type="password" id="eSignInPassword" placeholder="Password" required>
-              <label for="eSignInPassword">Password</label>
+            <input type="password" id="jsSignInPassword" placeholder="Password" required>
+              <label for="jsSignInPassword">Password</label>
           </div>
+          <!-- input for role and value false bool and hidded -->
+          <input type="hidden" id="jsRole" value="true">
           <p class="recover">
             <a href="#">Recover Password</a>
           </p>
-         <button class="btn" id="submitEmployerSignIn">Sign In</button>
+         <button class="btn" id="submitJobSeekerSignIn">Sign In</button>
         </form>
         <p class="or">----------or--------</p>
         <div class="icons">
@@ -77,8 +79,7 @@
         </div>
     </div>
 
-    <!-- <script src="employer.js"></script> -->
+    <!-- <script src="jobseeker.js"></script> -->
     <script src="script.js"></script>
-   
 </body>
 </html>

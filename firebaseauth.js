@@ -25,14 +25,15 @@
         messageDiv.style.opacity=0;
     },5000);
  }
- const signUp=document.getElementById('submitSignUp');
+ const signUp=document.getElementById('submitJobSeekerSignUp');
  signUp.addEventListener('click', (event)=>{
     event.preventDefault();
-    const email=document.getElementById('rEmail').value;
-    const password=document.getElementById('rPassword').value;
-    const firstName=document.getElementById('fName').value;
-    const lastName=document.getElementById('lName').value;
-    const role = document.querySelector('input[name="role"]:checked').value; // Radio button for role
+    const email=document.getElementById('jsEmail').value;
+    const password=document.getElementById('jsPassword').value;
+    const firstName=document.getElementById('jsFName').value;
+    const lastName=document.getElementById('jsLName').value;
+    const role= document.getElementById('jsRole').value == "false"? false:true;
+     // Radio button for role
 
     const auth=getAuth();
     const db=getFirestore();
@@ -50,7 +51,12 @@
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='mainhome.html';
+            if(role){
+                window.location.href='jobhost.html';
+            }
+            else{
+                window.location.href='homepage.html';
+            }
         })
         .catch((error)=>{
             console.error("error writing document", error);
@@ -68,19 +74,25 @@
     })
  });
 
- const signIn=document.getElementById('submitSignIn');
+ const signIn=document.getElementById('submitJobSeekerSignIn');
  signIn.addEventListener('click', (event)=>{
     event.preventDefault();
-    const email=document.getElementById('email').value;
-    const password=document.getElementById('password').value;
+    const email=document.getElementById('jsSignInEmail').value;
+    const password=document.getElementById('jsSignInPassword').value;
     const auth=getAuth();
 
     signInWithEmailAndPassword(auth, email,password)
     .then((userCredential)=>{
         showMessage('login is successful', 'signInMessage');
         const user=userCredential.user;
+        const isEmployer = document.getElementById('jsRole').value=="false"?false:true;
         localStorage.setItem('loggedInUserId', user.uid);
-        window.location.href='homepage.html';
+        localStorage.setItem('isEmployer', isEmployer);
+        if (isEmployer){
+            window.location.href='jobhost.html';
+        }else{
+            window.location.href='homepage.html';
+        }
     })
     .catch((error)=>{
         const errorCode=error.code;
