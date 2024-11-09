@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>job portal</title>
+    <link rel="stylesheet" href="style.css">
+ <!-- <link rel="stylesheet" href="showjob.css"> -->
+ <!-- <script src="showjobs.js"></script> -->
+ <!-- <script src="search.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+<header id="main-header" style="background-image: url(i1.jpg); height: 980px; " >
+<nav class="nav">
+<div class="list">
+    <a class="home" href="mainhome.html" style="text-decoration: none;">Home
+        
+    </a>
+    <a class="employer" href="employer.html">  Employer
+        <!-- <select name="employer">
+            <option>employer</option>
+            <option>post job</option>
+            <option>resume</option>
+            <option>info</option></select> -->
+    </a>
+  
+    <a class="candidate" href="candidate.html">Candidate </a>
+    <!-- <a class="page">Pages </a> -->
+    <a class="page">Pages </a>
+    <a class="contact" href="aboutus.html">About-Us </a>
+<a href="contactus.html">Contact-Us</a>
+</div>
+<div class="button">
+<button style="background-color: rgb(43, 169, 215);"><a href="role-in-login.html" style="text-decoration: none; padding-right: 4px;"> Register Yourself</a></button>
+
+      <!-- Other navigation items -->
+        <a href="profile.html">
+            <!-- <img id="profile-thumbnail" src="images/default-avatar.png" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%;"> -->
+            <i id="user-avatar" class="fas fa-user-circle user-logo" style="font-size: 50px;  margin-right: 40px;  "></i>
+        </a>
+    </div>
+    <div id="image"></div>
+</nav>
+
+<div class="searchbox">
+<!-- <div class="search-container">
+    <input type="text" placeholder="Search by job/city">
+    <input type="text" placeholder="Anywhere in India">
+    <button style="font-weight: bold;">Search jobs</button>
+</div> -->
+<div class="search-container">
+    <input type="text" id="search-job-title" placeholder="Search by job/city">
+    <input type="text" id="search-location" placeholder="Anywhere in India">
+    <button id="search-jobs-btn" style="font-weight: bold;">Search jobs</button>
+</div>
+
+</div>
+
+<div class="tagline">
+    <a href="">INDIA'S  JOB PLATFORM</a>
+    <h1>Finding Job Is Easy</h1>
+    </div>
+</header>
+
+<div id="recentjob">
+    <button id="button1">RECENT JOB</button>
+        <button id="button2">LATEST</button>
+    </div>
+    <div class="jobtype1" id="jobtype1">
+  
+    </div>
+    <div class="browse"><button class="browse"><a href="showjob.html" style="text-decoration: none;">Browse All Jobs</a></button></div>
+  
+    
+    
+    
+    <div class="instruction">
+        <h1 style="font-size: 34PX; padding-left: 40%; background-color: rgb(244, 241, 238);">How Its Work</h1>
+        <div class="instruct"><div class="create"><div class="account">
+            <h1>Create Account</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p>
+        </div>
+        <i class="fa-solid fa-user" style=" font-size: 3rem; margin-left: 13px;"></i>
+    </div>
+    
+    <div class="create"><div class="search">
+    <h1>Search</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p> 
+    </div>
+        
+    <i class="fa-solid fa-magnifying-glass" style="font-size: 3rem;margin-left: 13px;"></i>
+    </div>
+           <div class="create">
+            <div class="submit">
+            <h1>Submit</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p> 
+            </div>
+            
+            <i class="fa-solid fa-truck" style="font-size: 3rem;margin-left: 13px;"></i>
+        </div>
+    </div>
+    </div>
+    
+    <footer><div class="footer">
+        <div class="copyright"> 
+            <div class="footer-logo">
+                <div class="namelogo"><img src="lo.jpg" alt=""></div>
+                <div class="vl1"></div>
+            <div class="sociallink">
+                <h1>Follow Us On social Media</h1>
+                <div class="social-logo">
+                    <i class="fa-brands fa-instagram" style="font-size: 2rem ; color:aliceblue;"></i>
+                    <i class="fa-brands fa-linkedin" style="font-size: 2rem ; color:aliceblue;"></i>
+                    <i class="fa-brands fa-twitter" style="font-size: 2rem ; color:aliceblue;"></i>
+                    <i class="fa-brands fa-github" style="font-size: 2rem ; color:aliceblue;"></i>
+                    <i class="fa-brands fa-youtube" style="font-size: 2rem ; color:aliceblue;"></i>
+    
+    
+                </div>
+            </div>
+        </div>
+        <hr>
+    <div class="terms">
+    <div class="copyrightlogo">
+    <div style="display: flex;"> <i class="fa-regular fa-copyright">  </i>
+                <div>2024 ayushi</div><div class="vl"></div>
+    
+    <div>All rights reserved</div></div>
+        <div>privacy policy</div>
+        <div>Terms & Conditions</div>  
+    
+            </div>
+        </div>
+    </div>
+    <div class="links">
+        <div class="link1">
+            <h1>Apply on the go</h1>
+            <p>Get real time job updates on our App</p>
+            <img src="lo.jpg" alt="" class="login-img">
+        </div>
+        <div class="scanner"><img src="frame.png" alt=""></div>
+    </div>
+    </div>
+    
+    </footer>
+    
+    <script >  
+        
+        function toggleButtonColors(clickedButton, otherButton) {
+                if (clickedButton.style.backgroundColor === 'blue') {
+                    clickedButton.style.backgroundColor = 'gray';
+                } else {
+                    clickedButton.style.backgroundColor = 'blue';
+                    otherButton.style.backgroundColor = 'gray';
+                }
+            }
+    
+            document.getElementById('button1').addEventListener('click', function() {
+                toggleButtonColors(document.getElementById('button1'), document.getElementById('button2'));
+            });
+    
+            document.getElementById('button2').addEventListener('click', function() {
+                toggleButtonColors(document.getElementById('button2'), document.getElementById('button1'));
+            });
+    
+    </script><script>
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+    
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getFirestore(app);
+    
+    // Function to load user data and set profile picture
+    const loadUserData = async (userId) => {
+        const userRef = doc(db, "users", userId);
+        const userDoc = await getDoc(userRef);
+        
+        if (userDoc.exists()) {
+            const userData = userDoc.data();
+    
+            // Set profile name, email, role, and profile picture in the modal
+            document.getElementById("profile-name").textContent = `${userData.firstName} ${userData.lastName}`;
+            document.getElementById("profile-email").textContent = userData.email;
+            document.getElementById("profile-role").textContent = userData.role ? 'Employer' : 'Job Seeker';
+    
+            // Set profile picture or fallback to default avatar
+            const profileImage = userData.image || 'images/default-avatar.png';
+            document.getElementById("profile-photo").src = profileImage;
+            
+            // Update profile picture in the nav bar
+            document.getElementById("profile-thumbnail").src = profileImage;
+        } else {
+            console.log("No such user document!");
+        }
+    };
+    
+    // On login, load the user profile picture
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            loadUserData(user.uid);
+        } else {
+            // If not logged in, redirect to login page
+            window.location.href = 'login.html';
+        }
+    });
+    
+    </script>
+    <script src="mainhome.js" type="module"></script>
+    </body>
+    </html>

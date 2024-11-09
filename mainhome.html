@@ -13,20 +13,23 @@
 </head>
 <body>
 <header id="main-header" >
-<nav class="nav">
+
+    <nav class="nav">
+
 <div class="list">
+
     <a class="home" href="mainhome.html" style="text-decoration: none;">Home
         
     </a>
-    <a class="employer">  Employer
+    <a class="employer" href="employer.html">  Employer
         <!-- <select name="employer">
             <option>employer</option>
             <option>post job</option>
             <option>resume</option>
             <option>info</option></select> -->
     </a>
-    <a class="candidate">Candidate </a>
-    <!-- <a class="page">Pages </a> -->
+    <a class="candidate" href="candidate.html">Candidate </a>
+    <a class="page">Pages </a>
     <a class="contact" href="aboutus.html">About-Us </a>
 <a href="contactus.html">Contact-Us</a>
 </div>
@@ -36,10 +39,11 @@
       <!-- Other navigation items -->
         <a href="profile.html">
             <!-- <img id="profile-thumbnail" src="images/default-avatar.png" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%;"> -->
-            <i id="user-avatar" class="fas fa-user-circle user-logo" style="font-size: 50px;  margin-right: 40px;  "></i>
+            <i id="user-avatar" class="fas fa-user-circle user-logo" style="font-size: 50px; color: #0c0d0d;  margin-right: 40px;  "></i>
         </a>
+        <!-- <i class="fa-solid fa-circle-user" style="color: #0c0d0d;"></i> -->
     
-    
+        
 
  
     <!-- <button>
@@ -86,6 +90,7 @@ Profile Photo on Main Page -->
         </div>
     </div>
 </div> -->
+<div id="image"></div>
 </nav>
 
 <div class="searchbox">
@@ -169,38 +174,44 @@ Profile Photo on Main Page -->
 <section>
     <div class="categories">
         <h2>Job Categories</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repudiandae labore quasi, veritatis est cumque iure officiis sint beatae tempora nesciunt nisi</p>
+        <p>A job description outlines a role's responsibilities, required skills, and qualifications. It helps candidates understand job expectations and aligns them with employer needs.</p>
     </div>
     <div class="job-by-name">
         <div class="jobcateg">
             <div class="jobcategname">
-        <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-           <div class="job"> <h4>Accounting & Counsulting</h4>
-            <p>10 jobs</p>
+                <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
+                <div class="job">
+                    <h4>Advertising and Marketing</h4>
+                 <p>10 jobs</p>
+                 <button><a id="jobdescription" href="https://www.indeed.com/career-advice/career-development/what-are-the-different-fields-in-marketing">  know more </a></button>
         </div>
     </div>
     </div>
     <div class="jobcateg">
         <div class="jobcategname">
     <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-       <div class="job"> <h4>Accounting & Counsulting</h4>
+       <div class="job"> <h4>Computer Programmer
+    </h4>
         <p>10 jobs</p>
+        <button><a href="https://www.indeed.com/q-Computer-Programmer-jobs.html?cgtk=2832bf16-f707-4907-b41d-2f96e2e63b36&from=careeradvice-US" id="jobdescription">  know more </a></button>
     </div>
 </div>
 </div>
 <div class="jobcateg">
     <div class="jobcategname">
 <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-   <div class="job"> <h4>Accounting & Counsulting</h4>
+   <div class="job"> <h4>Software Engineer</h4>
     <p>10 jobs</p>
+    <button><a href="https://www.indeed.com/q-Software-Engineer-jobs.html?cgtk=2832bf16-f707-4907-b41d-2f96e2e63b36&from=careeradvice-US" id="jobdescription">  know more </a></button>
 </div>
 </div>
 </div>
 <div class="jobcateg">
     <div class="jobcategname">
 <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-   <div class="job"> <h4>Accounting & Counsulting</h4>
+   <div class="job"> <h4>Web Developer</h4>
     <p>10 jobs</p>
+    <button><a href="https://www.indeed.com/q-Web-Developer-jobs.html?cgtk=2832bf16-f707-4907-b41d-2f96e2e63b36&from=careeradvice-US" id="jobdescription">  know more </a></button>
 </div>
 </div>
 </div>
@@ -210,32 +221,36 @@ Profile Photo on Main Page -->
     <div class="jobcateg">
         <div class="jobcategname">
     <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-       <div class="job"> <h4>Accounting & Counsulting</h4>
+       <div class="job"> <h4>  Education</h4>
         <p>10 jobs</p>
+        <button><a href="https://www.indeed.com/q-Professor-jobs.html?cgtk=2832bf16-f707-4907-b41d-2f96e2e63b36&from=careeradvice-US" id="jobdescription">  know more </a></button>
     </div>
 </div>
 </div>
 <div class="jobcateg">
     <div class="jobcategname">
 <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-   <div class="job"> <h4>Accounting & Counsulting</h4>
+   <div class="job"> <h4>Entertainment</h4>
     <p>10 jobs</p>
+    <button><a href="https://www.indeed.com/viewjob?jk=d292af3557e89c34&tk=1ic7tb80hgsud8aa&from=serp&vjs=3" id="jobdescription">  know more </a></button>
 </div>
 </div>
 </div>
 <div class="jobcateg">
     <div class="jobcategname">
 <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-   <div class="job"> <h4>Accounting & Counsulting</h4>
+   <div class="job"> <h4>Healthcare</h4>
     <p>10 jobs</p>
+    <button><a href="https://www.indeed.com/q-Physician-jobs.html?cgtk=2832bf16-f707-4907-b41d-2f96e2e63b36&from=careeradvice-US" id="jobdescription">  know more </a></button>
 </div>
 </div>
 </div>
 <div class="jobcateg">
     <div class="jobcategname">
 <i class="fa-solid fa-envelope" id="logo" style="font-size: 3rem; color: rgb(250, 250, 247);"></i>
-   <div class="job"> <h4>Accounting & Counsulting</h4>
+   <div class="job"> <h4>Fashion</h4>
     <p>10 jobs</p>
+    <button><a href="https://www.indeed.com/viewjob?jk=ec5ff4cd70fda6d5&tk=1ic7tdma7h3ms887&from=serp&vjs=3" id="jobdescription">  know more </a></button>
 </div>
 </div>
 </div>
@@ -246,7 +261,7 @@ Profile Photo on Main Page -->
     
     <div class="postjob"></div>
     <div class="posting">
-        <button class="hostjob">APNA FOR EMPLOYERS</button>
+        <button class="hostjob"><a href="employer.html" style="text-decoration: none;">Page For EMPLOYERS</a></button>
         <h1>Want to hire?
           </h1>
           <p>  Find the best candidate from 5 crore+ active job seekers!</p>
@@ -264,14 +279,15 @@ Profile Photo on Main Page -->
     <h1 style="font-size: 34PX; padding-left: 40%; background-color: rgb(244, 241, 238);">How Its Work</h1>
     <div class="instruct"><div class="create"><div class="account">
         <h1>Create Account</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p>
+        <p>The Create Account feature lets users register as Job Seekers to apply for jobs or as Employers to post job listings. Each account type accesses a customized dashboard for a tailored experience.</p>
     </div>
     <i class="fa-solid fa-user" style=" font-size: 3rem; margin-left: 13px;"></i>
 </div>
 
 <div class="create"><div class="search">
 <h1>Search</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p> 
+    <p>
+        The Search feature enables users to find job listings based on keywords, location, and other filters, helping Job Seekers quickly locate relevant opportunities.</p> 
 </div>
     
 <i class="fa-solid fa-magnifying-glass" style="font-size: 3rem;margin-left: 13px;"></i>
@@ -279,7 +295,8 @@ Profile Photo on Main Page -->
        <div class="create">
         <div class="submit">
         <h1>Submit</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem quasi officiis, recusandae vel est!</p> 
+        <p>
+            The Submit feature allows users to send their applications for job listings or submit their job postings. Job Seekers can apply, while Employers can post new job opportunities.</p> 
         </div>
         
         <i class="fa-solid fa-truck" style="font-size: 3rem;margin-left: 13px;"></i>
@@ -290,7 +307,7 @@ Profile Photo on Main Page -->
 <footer><div class="footer">
     <div class="copyright"> 
         <div class="footer-logo">
-            <div class="namelogo"><img src="img.jpg" alt=""></div>
+            <div class="namelogo"><img src="lo.jpg" alt=""></div>
             <div class="vl1"></div>
         <div class="sociallink">
             <h1>Follow Us On social Media</h1>
@@ -322,9 +339,9 @@ Profile Photo on Main Page -->
     <div class="link1">
         <h1>Apply on the go</h1>
         <p>Get real time job updates on our App</p>
-        <img src="img.jpg" alt="" class="login-img">
+        <img src="lo.jpg" alt="" class="login-img">
     </div>
-    <div class="scanner"><img src="img.jpg" alt=""></div>
+    <div class="scanner"><img src="frame.png" alt=""></div>
 </div>
 </div>
 

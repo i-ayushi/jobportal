@@ -52,7 +52,7 @@
         setDoc(docRef,userData)
         .then(()=>{
             if(role){
-                window.location.href='jobhost.html';
+                window.location.href='profile.html';
             }
             else{
                 window.location.href='mainhome.html';

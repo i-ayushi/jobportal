@@ -18,7 +18,7 @@ header{
     height: 680px;
     background-size: cover;
 
-background-image: url(job-img.jpg);
+/* background-image: url(job-img.jpg); */
     /* z-index: 0; */
 
 }/* Default styles */
@@ -78,13 +78,13 @@ nav.nav {
    
 }
 
-
+/* 
 .tagline{
     padding: 20px;
     margin-left: 57%;
    margin-top: 10%;
     height: 10px;
-}
+} */
 /* .tagline a{
     font-size: 53px;
     text-decoration: none;
@@ -182,7 +182,7 @@ button:hover { cursor: pointer;
 .searchbox{
     display: flex;
     position: relative;
-    bottom: -50% ;
+    bottom: -45% ;
     justify-content: left;
     margin-left: 100px;
 }
@@ -304,7 +304,8 @@ article{background-color: hsl(0, 0%, 100%);
     /* gap: 20px; */
      /* Space between the job cards */
     padding: 20px;
-    padding-top: 20px; 
+    padding-top: 30px; 
+   
     margin-left: 8%;
     width: 90%;
 }
@@ -346,7 +347,7 @@ article{background-color: hsl(0, 0%, 100%);
     margin-left: -30px;
 }
 .img p{
-    margin-left: -20%;
+    margin-left: -0%;
 } 
 
 .img{
@@ -358,7 +359,10 @@ article{background-color: hsl(0, 0%, 100%);
  /* padding-top: 14px; */
 
 }
-button.apply{
+a{
+    text-decoration: no;
+}
+.jobdescriptionbutton.apply{
     font-size: 10px;
     margin: 20px 0px 0px 60px;
 }
@@ -388,7 +392,7 @@ button.apply{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 .categories h2{
     font-size: 34px;
@@ -416,9 +420,12 @@ button.apply{
  align-items: center;
  justify-content: center;
  background-color: #fff;
- border: 2px solid rgb(237, 237, 235);
+ border: 2px solid rgb(206, 225, 228);
  border-radius: 10px;
- box-shadow: 3px 5px rgb(248, 244, 244);
+ box-shadow: 3px 5px rgb(213, 244, 240);
+}
+.jobcateg:hover{
+    background-color: #afebfa;
 }
 .jobcategname{
     margin-top: 10%;
@@ -610,27 +617,31 @@ body {
 /* Default styles for desktop and larger screens */
 
 header {
-    height: 680px;
-    background-size: cover;
-    background-image: url(header.jpg);
+    height: 850px;
+    background-size: auto;
+    /* width: 580px; */
+    background-image: url(g.jpg);
+    
 }
 
 .tagline {
     padding: 20px;
-    margin-left: 57%;
-    margin-top: 10%;
-    height: 10px;
+    margin-left: 25%;
+    margin-top: 3%;
+    height: 40px;
 }
 
 .tagline a {
-    font-size: 53px;
+    font-size: 91px;
     text-decoration: none;
-    color: #100a5a;
+    color: #07286b;
 }
 
 .tagline h1 {
     font-size: 53px;
-    padding-left: 34px;
+    /* padding-left: 4px; */
+    color: #c9e7e5;
+    margin-left: 50%;
 }
 
 .nav {
@@ -653,7 +664,7 @@ header {
 
 .button {
     margin-top: 25px;
-    margin-right: 32px;
+    margin-right: 52px;
     margin-bottom: 10px;
 }
 
@@ -662,6 +673,7 @@ button {
     padding: 13px 30px;
     border: 2px solid rgb(26, 169, 150);
     border-radius: 5px;
+    
 }
 
 .search-container {
@@ -839,13 +851,13 @@ button {
     }
 }
 
-button {
+/* button {
     background-color: rgb(41, 159, 17);
     padding: 13px 30px;
     border: 2px solid green;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
+} */
 
 button:hover {
     background-color: #a2adb8;
@@ -856,9 +868,9 @@ button:hover {
     height: 300px;
     width: 250px;
     background-color: #fff;
-    border: 2px solid rgb(247, 247, 244);
+    border: 2px solid rgb(189, 225, 234);
     border-radius: 10px;
-    box-shadow: 3px 5px rgb(248, 244, 244);
+    box-shadow: 3px 5px rgb(182, 192, 203);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1020,4 +1032,6 @@ header {
         width: 100%; /* Full width on small screens */
     }
 }
-
+.apply{
+   margin-left: 35px;
+}
